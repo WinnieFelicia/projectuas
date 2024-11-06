@@ -30,8 +30,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          "logo.jpg",  
-          height: 40,     
+          "logo.jpg",
+          height: 40,
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("background.jpg"),  // Path to background image
+            image: AssetImage("background.jpg"), // Path to background image
             fit: BoxFit.cover,
           ),
         ),
@@ -54,7 +54,8 @@ class _HomePageState extends State<HomePage> {
                 }));
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 foregroundColor: const Color.fromARGB(255, 0, 77, 125),
                 shape: RoundedRectangleBorder(
@@ -71,7 +72,8 @@ class _HomePageState extends State<HomePage> {
                 }));
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 foregroundColor: const Color.fromARGB(255, 0, 77, 125),
                 shape: RoundedRectangleBorder(

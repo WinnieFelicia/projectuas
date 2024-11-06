@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart'; 
+import 'main.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const HomePage(),
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
 }
@@ -28,8 +28,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          "logo.jpg",  
-          height: 40,        
+          "logo.jpg",
+          height: 40,
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
@@ -48,7 +48,8 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 2, vertical: 8),
                   child: TextField(
                     controller: _emailController,
                     decoration: const InputDecoration(
@@ -58,7 +59,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 2, vertical: 8),
                   child: TextFormField(
                     controller: _passwordController,
                     obscureText: true,
@@ -73,7 +75,8 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const MyApp()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MyApp()));
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(100, 40), // Shorter button size

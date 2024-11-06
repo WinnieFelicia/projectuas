@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'main.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -100,12 +100,12 @@ class _HomePageState extends State<HomePage> {
               ),
               ElevatedButton(
                 onPressed: () {},
-                child: const Text("Register"),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(30, 30),
                   backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   foregroundColor: const Color.fromARGB(255, 253, 190, 127),
                 ),
+                child: const Text("Register"),
               ),
               ElevatedButton(
                   onPressed: () {
