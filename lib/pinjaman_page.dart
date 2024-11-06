@@ -15,9 +15,9 @@ class _PinjamanPageState extends State<PinjamanPage> {
   final TextEditingController _idMemberController = TextEditingController();
   final TextEditingController _idPustakawanController = TextEditingController();
   final TextEditingController _kodeBukuController = TextEditingController();
-  DateTime? _tglPinjam; // Changed to DateTime
-  DateTime? _tglKembali; // Changed to DateTime
-  LoanStatus? _status; // Variable to hold loan status
+  DateTime? _tglPinjam; 
+  DateTime? _tglKembali; 
+  LoanStatus? _status; 
 
   void _addLoan() {
     setState(() {
@@ -30,7 +30,7 @@ class _PinjamanPageState extends State<PinjamanPage> {
         'tgl_kembali': _tglKembali,
         'status': _status?.name,
       });
-      _clearFields(); // Clear fields after adding
+      _clearFields(); 
     });
   }
 
@@ -39,9 +39,9 @@ class _PinjamanPageState extends State<PinjamanPage> {
     _idMemberController.clear();
     _idPustakawanController.clear();
     _kodeBukuController.clear();
-    _tglPinjam = null; // Reset date
-    _tglKembali = null; // Reset date
-    _status = null; // Reset status
+    _tglPinjam = null; 
+    _tglKembali = null;
+    _status = null; 
   }
 
   void _deleteLoan(int index) {
@@ -60,7 +60,7 @@ class _PinjamanPageState extends State<PinjamanPage> {
       _tglKembali = loan['tgl_kembali'];
       _status = loan['status'] == LoanStatus.dipinjam.name ? LoanStatus.dipinjam : LoanStatus.kembali;
     } else {
-      _clearFields(); // Clear fields for new loan
+      _clearFields(); 
     }
 
     await showDialog(
@@ -99,7 +99,7 @@ class _PinjamanPageState extends State<PinjamanPage> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _selectDate(context, false), // for tgl_kembali
+                onTap: () => _selectDate(context, false), 
                 child: AbsorbPointer(
                   child: TextField(
                     controller: TextEditingController(
@@ -136,7 +136,7 @@ class _PinjamanPageState extends State<PinjamanPage> {
                 if (index == null) {
                   _addLoan();
                 } else {
-                  _editLoan(index); // You can implement edit functionality
+                  _editLoan(index); 
                 }
                 Navigator.pop(context);
               },
@@ -174,8 +174,6 @@ class _PinjamanPageState extends State<PinjamanPage> {
   }
 
   void _editLoan(int index) {
-    // Function to handle loan editing
-    // This can be implemented as needed
   }
 
   @override
@@ -201,8 +199,8 @@ class _PinjamanPageState extends State<PinjamanPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showDialog(),
-        child: const Icon(Icons.add),
         backgroundColor: Colors.blueAccent,
+        child: const Icon(Icons.add),
       ),
     );
   }

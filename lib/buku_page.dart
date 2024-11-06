@@ -8,7 +8,7 @@ class BukuPage extends StatefulWidget {
 }
 
 class _BukuPageState extends State<BukuPage> {
-  final List<Map<String, String>> _books = []; // List to hold book items
+  final List<Map<String, String>> _books = [];
   final TextEditingController _kodeBukuController = TextEditingController();
   final TextEditingController _judulController = TextEditingController();
   final TextEditingController _penulisController = TextEditingController();
@@ -25,7 +25,7 @@ class _BukuPageState extends State<BukuPage> {
       _tahunController.text = book['tahun']!;
       _stokController.text = book['stok']!;
     } else {
-      _clearFields(); // Clear fields for new book
+      _clearFields(); 
     }
 
     await showDialog(
@@ -94,7 +94,7 @@ class _BukuPageState extends State<BukuPage> {
         'tahun': _tahunController.text,
         'stok': _stokController.text,
       });
-      _clearFields(); // Clear fields after adding
+      _clearFields(); 
     });
   }
 
@@ -108,7 +108,7 @@ class _BukuPageState extends State<BukuPage> {
         'tahun': _tahunController.text,
         'stok': _stokController.text,
       };
-      _clearFields(); // Clear fields after editing
+      _clearFields(); 
     });
   }
 
@@ -161,8 +161,8 @@ class _BukuPageState extends State<BukuPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showDialog(),
-        child: const Icon(Icons.add),
         backgroundColor: Colors.blueAccent,
+        child: const Icon(Icons.add),
       ),
     );
   }

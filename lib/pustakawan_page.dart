@@ -8,7 +8,7 @@ class PustakawanPage extends StatefulWidget {
 }
 
 class _PustakawanPageState extends State<PustakawanPage> {
-  final List<Map<String, String>> _librarians = []; // List to hold librarian items
+  final List<Map<String, String>> _librarians = [];
   final TextEditingController _idLibrarianController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
@@ -24,7 +24,7 @@ class _PustakawanPageState extends State<PustakawanPage> {
         'email': _emailController.text,
         'no_hp': _phoneController.text,
       });
-      _clearFields(); // Clear fields after adding
+      _clearFields();
     });
   }
 
@@ -50,7 +50,7 @@ class _PustakawanPageState extends State<PustakawanPage> {
       _emailController.text = librarian['email']!;
       _phoneController.text = librarian['no_hp']!;
     } else {
-      _clearFields(); // Clear fields for new librarian
+      _clearFields();
     }
 
     await showDialog(
@@ -93,7 +93,7 @@ class _PustakawanPageState extends State<PustakawanPage> {
                 if (index == null) {
                   _addLibrarian();
                 } else {
-                  _editLibrarian(index); // You can implement edit functionality
+                  _editLibrarian(index);
                 }
                 Navigator.pop(context);
               },
@@ -114,7 +114,7 @@ class _PustakawanPageState extends State<PustakawanPage> {
         'email': _emailController.text,
         'no_hp': _phoneController.text,
       };
-      _clearFields(); // Clear fields after editing
+      _clearFields();
     });
   }
 
@@ -131,13 +131,15 @@ class _PustakawanPageState extends State<PustakawanPage> {
           final librarian = _librarians[index];
           return ListTile(
             title: Text(librarian['nama']!),
-            subtitle: Text('ID: ${librarian['id_pustakawan']}, Email: ${librarian['email']}, No HP: ${librarian['no_hp']}'),
+            subtitle: Text(
+                'ID: ${librarian['id_pustakawan']}, Email: ${librarian['email']}, No HP: ${librarian['no_hp']}'),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
                   icon: const Icon(Icons.edit),
-                  onPressed: () => _showDialog(librarian: librarian, index: index),
+                  onPressed: () =>
+                      _showDialog(librarian: librarian, index: index),
                 ),
                 IconButton(
                   icon: const Icon(Icons.delete),
@@ -150,8 +152,8 @@ class _PustakawanPageState extends State<PustakawanPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showDialog(),
-        child: const Icon(Icons.add),
         backgroundColor: Colors.blueAccent,
+        child: const Icon(Icons.add),
       ),
     );
   }

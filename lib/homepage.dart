@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'buku_page.dart'; // Import BukuPage
-import 'member_page.dart'; // Import MemberPage
-import 'pinjaman_page.dart'; // Import PinjamanPage
-import 'pustakawan_page.dart'; // Import PustakawanPage
+import 'buku_page.dart'; 
+import 'member_page.dart'; 
+import 'pinjaman_page.dart'; 
+import 'pustakawan_page.dart'; 
 
 void main() {
   runApp(const MyApp());
@@ -31,10 +31,9 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  int _selectedIndex = 0; // To keep track of the selected index
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>(); // Create a GlobalKey for Scaffold
+  int _selectedIndex = 0; 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>(); 
 
-  // List of pages for navigation
   final List<Widget> _pages = const [
     BukuPage(),
     MemberPage(),
@@ -44,25 +43,25 @@ class _DashboardState extends State<Dashboard> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index; // Update the selected index
+      _selectedIndex = index; 
     });
-    Navigator.pop(context); // Close the drawer after selecting an item
+    Navigator.pop(context); 
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey, // Assign the GlobalKey to the Scaffold
+      key: _scaffoldKey, 
       appBar: AppBar(
         title: const Text('Library Management Dashboard'),
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-            _scaffoldKey.currentState?.openDrawer(); // Open the drawer using the GlobalKey
+            _scaffoldKey.currentState?.openDrawer(); 
           },
         ),
       ),
-      body: _pages[_selectedIndex], // Display the selected page
+      body: _pages[_selectedIndex], 
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,

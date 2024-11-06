@@ -24,7 +24,7 @@ class _MemberPageState extends State<MemberPage> {
         'email': _emailController.text,
         'no_hp': _phoneController.text,
       });
-      _clearFields(); // Clear fields after adding
+      _clearFields();
     });
   }
 
@@ -50,7 +50,7 @@ class _MemberPageState extends State<MemberPage> {
       _emailController.text = member['email']!;
       _phoneController.text = member['no_hp']!;
     } else {
-      _clearFields(); // Clear fields for new member
+      _clearFields(); 
     }
 
     await showDialog(
@@ -114,7 +114,7 @@ class _MemberPageState extends State<MemberPage> {
         'email': _emailController.text,
         'no_hp': _phoneController.text,
       };
-      _clearFields(); // Clear fields after editing
+      _clearFields(); 
     });
   }
 
@@ -131,7 +131,8 @@ class _MemberPageState extends State<MemberPage> {
           final member = _members[index];
           return ListTile(
             title: Text(member['nama']!),
-            subtitle: Text('ID: ${member['id_member']}, Email: ${member['email']}, No HP: ${member['no_hp']}'),
+            subtitle: Text(
+                'ID: ${member['id_member']}, Email: ${member['email']}, No HP: ${member['no_hp']}'),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -150,8 +151,8 @@ class _MemberPageState extends State<MemberPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showDialog(),
-        child: const Icon(Icons.add),
         backgroundColor: Colors.blueAccent,
+        child: const Icon(Icons.add),
       ),
     );
   }
